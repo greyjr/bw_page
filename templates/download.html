@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>BW_page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+	<div align="center">
+		<h2>Please, select a file to download:</h2>
+		<a class="menu_button" href="{{ url_for('upload_form') }}">or back to main page for upload one more file</a>
+		<br>
+
+		{% for file in filelist %}
+			<br>
+			<a class="filelist" href="file:///127.0.0.1:5000/download/{{ file }}" download='{{file}}' target="_blank">{{file}}</a>
+		{% endfor %}
+
+	</div>
+
+</body>
